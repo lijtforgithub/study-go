@@ -1,8 +1,31 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"unsafe"
+)
 
 func main() {
+
+	// 常量
+	const x string = "X"
+	const y string = "Y"
+
+	fmt.Println(x + y)
+
+	const (
+		Unknown = 0
+		Female  = 1
+		Male    = 2
+	)
+
+	const (
+		r = "abc"
+		s = len(r)
+		t = unsafe.Sizeof(Unknown)
+	)
+
+	fmt.Println(r, s, t)
 
 	const (
 		a = iota // 0

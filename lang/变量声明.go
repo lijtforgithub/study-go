@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"unsafe"
 )
 
 var s = "S"
@@ -48,24 +47,7 @@ func main() {
 	_, b = 5, 7
 	fmt.Println(b)
 
-	// 常量
-	const l string = "L"
-	const m string = "M"
-
-	fmt.Println(l + m)
-
-	const (
-		Unknown = 0
-		Female  = 1
-		Male    = 2
-	)
-
-	const (
-		n = "abc"
-		o = len(n)
-		p = unsafe.Sizeof(n)
-	)
-
-	fmt.Println(n, o, p)
+	ch := 'c'
+	fmt.Printf("%d\t%c", ch, ch)
 
 }
