@@ -9,6 +9,10 @@ var s = "S"
 
 func main() {
 
+	var bl bool
+	bl = false
+	fmt.Println("bl = ", bl)
+
 	// 一行代表一个语句结束，不需要像 C 家族中的其它语言一样以分号 ; 结尾。如果你打算将多个语句写在同一行，它们则必须使用 ; 人为区分
 	fmt.Println("Hello Word!")
 
@@ -17,7 +21,6 @@ func main() {
 	fmt.Println("a = ", a)
 	a = 1
 	fmt.Println("a = ", a)
-	initValue()
 
 	// 声明和赋值一起
 	var b int = 2
@@ -26,7 +29,6 @@ func main() {
 	// 初始化声明 省略var, 注意 :=左侧的变量不应该是已经声明过的，否则会导致编译错误；这种不带声明格式的只能在函数体中出现
 	d := true
 	e := "xxoo"
-
 	fmt.Println(a + b + c)
 	fmt.Println(d, e)
 
@@ -57,26 +59,14 @@ func main() {
 	_, b = 5, 7
 	fmt.Println(b)
 
-	ch := 'c'
-	var sp = fmt.Sprintf("%d\t%c", ch, ch)
-	fmt.Print("格式化结果 " + sp)
+	var ss string = `很长的字符串
+包含换行的
+可以用这个符号`
+	fmt.Println(ss)
 
-}
+	ss = "加号拼接的字符串" +
+		"；加号要放在每行的末尾" +
+		"；不然效果你试试"
+	fmt.Println(ss)
 
-func initValue() {
-	fmt.Println("默认值-开始")
-	var a *int
-	var b []int
-	var c map[string]int
-	var d chan int
-	var e func(string) int
-	var f error // error 是接口
-
-	fmt.Println(a)
-	fmt.Println(b)
-	fmt.Println(c)
-	fmt.Println(d)
-	fmt.Println(e)
-	fmt.Println(f)
-	fmt.Println("默认值-结束")
 }
