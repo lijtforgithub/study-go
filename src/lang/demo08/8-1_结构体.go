@@ -30,19 +30,27 @@ func main() {
 	var t2 Teacher = Teacher{"马老师", 45, "清华大学"}
 	fmt.Println(t2)
 
-	var t3 *Teacher = new(Teacher)
-	(*t3).Name = "指针方式"
-	t3.Age = 10
-	fmt.Println(*t3)
+	t3 := Teacher{
+		Name: "不用按照顺序方式",
+		Age:  12,
+	}
+	fmt.Println(t3)
 
-	var t4 *Teacher = &Teacher{"嚣张", 1, "北大"}
-	t4.Name = "寒气"
+	var t4 *Teacher = new(Teacher)
+	(*t4).Name = "指针方式"
+	t4.Age = 10
 	fmt.Println(*t4)
 
+	var t5 *Teacher = &Teacher{"嚣张", 1, "北大"}
+	t5.Name = "寒气"
+	fmt.Println(*t5)
+
+	// 字段完全相同 类型转换
 	var p Person
 	p = Person(t1)
 	fmt.Println(p)
 
+	// 别名也要类型转换
 	var per Per = Per(p)
 	fmt.Println(per)
 

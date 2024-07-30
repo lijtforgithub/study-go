@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"src/lang/pkg/imp"
+	"src/lang/pkg/import1"
 	// 这里使用源文件目录
 	"src/lang/pkg/import"
 	// 使用别名区分
@@ -11,9 +11,9 @@ import (
 )
 
 func main() {
-	fmt.Println(imp.Pkg_1)
-	imp.UpCase()
-	fmt.Println(imp.Pkg_2)
+	fmt.Println(import1.Pkg_1)
+	import1.UpCase()
+	fmt.Println(import1.Pkg_2)
 
 	// 这里使用包名
 	fmt.Println(unsame.Pkg_3)
