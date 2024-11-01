@@ -13,5 +13,9 @@ func testDefer(num1 int, num2 int) int {
 	num2++
 	result := num1 + num2
 	fmt.Println("result = ", result)
+	// 发生异常 defer也会执行 执行之后抛出异常
+	//i := 0
+	//fmt.Println(num2 / i)
+
 	return result
 }

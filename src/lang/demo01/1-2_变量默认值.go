@@ -14,6 +14,9 @@ func main() {
 	var f error // error 是接口
 	var g bool
 
+	var h byte
+	var i rune
+
 	fmt.Println(a)
 	fmt.Println(b)
 	fmt.Println(c)
@@ -21,5 +24,8 @@ func main() {
 	fmt.Println(e)
 	fmt.Println(f)
 	fmt.Println(g)
+
+	fmt.Println(h)
+	fmt.Println(i)
 
 }

@@ -15,9 +15,15 @@ func main() {
 
 	const (
 		Unknown = 0
-		Female  = 1
-		Male    = 2
+		// 不赋值和上一个常量一样
+		XXOO
+		Female = 1
+		XXOO1
+		Male = 2
+		XXOO2
 	)
+
+	fmt.Println(XXOO, XXOO1, XXOO2)
 
 	const (
 		r = "abc"
