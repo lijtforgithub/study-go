@@ -1,7 +1,7 @@
 package main
 
 import "fmt"
-import "src/lang/pkg/struct"
+import "study-go/src/lang/pkg/struct"
 
 func main() {
 	s1 := pckStruct.Student{"大写字母开头的结构体其他包可以访问"}

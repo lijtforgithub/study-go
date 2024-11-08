@@ -11,3 +11,12 @@
   - 切片类型
   - 接口类型（interface）
   - Map 类型
+
+## Web框架
+#### go mod
+- go env -w GO111MODULE=on
+- go env -w GOPROXY=https://goproxy.cn,direct
+#### Gin
+- go mod init src
+- go mod tidy
+- go get -u github.com/gin-gonic/gin

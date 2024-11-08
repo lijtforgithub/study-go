@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"src/lang/pkg/init"
+	"study-go/src/lang/pkg/init"
 )
 
 var global int = initGlobalValue()

@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"src/lang/pkg/import1"
+	"study-go/src/lang/pkg/import1"
 	// 这里使用源文件目录
-	"src/lang/pkg/import"
+	"study-go/src/lang/pkg/import"
 	// 使用别名区分
-	p1 "src/lang/pkg/alias/pkg1"
-	p2 "src/lang/pkg/alias/pkg2"
+	p1 "study-go/src/lang/pkg/alias/pkg1"
+	p2 "study-go/src/lang/pkg/alias/pkg2"
 )
 
 func main() {
