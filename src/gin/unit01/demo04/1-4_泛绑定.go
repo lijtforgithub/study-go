@@ -8,16 +8,16 @@ import (
 func main() {
 	server := gin.Default()
 
-	server.GET("/test1/:action", func(c *gin.Context) {
+	server.GET("/test1/:name/:action", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
-			"test1": c.Param("action"),
+			c.Param("name"): c.Param("action"),
 		})
 	})
 
 	// 前缀匹配
-	server.GET("/test2/*action", func(c *gin.Context) {
+	server.GET("/test2/:name/*action", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{
-			"test2": c.Param("action"),
+			c.Param("name"): c.Param("action"),
 		})
 	})
 
