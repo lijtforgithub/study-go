@@ -2,11 +2,13 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"mime/multipart"
 	"net/http"
 )
 
 type form struct {
-	FormKey string `form:"key"`
+	FormKey  string                `form:"key"`
+	FormFile *multipart.FileHeader `form:"file"`
 }
 
 type json struct {

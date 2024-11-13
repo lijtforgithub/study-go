@@ -28,7 +28,7 @@ func main() {
 	server := gin.Default()
 
 	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {
-		v.RegisterValidation("bookabledate", bookableDate)
+		_ = v.RegisterValidation("bookabledate", bookableDate)
 	}
 
 	server.GET("/bookable", getBookable)
