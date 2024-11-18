@@ -10,13 +10,8 @@ import (
 // go get -u github.com/go-redis/redis/v8
 
 func main() {
-	// 创建一个新的 Redis 客户端
-	ctx := context.Background()
-	rdb := redis.NewClient(&redis.Options{
-		Addr:     "localhost:6379", // Redis 服务器地址
-		Password: "",               // 密码（如果需要）
-		DB:       0,                // 默认数据库
-	})
+	rdb := createConnect()
+	ctx := rdb.Context()
 
 	// 设置一个键值对
 	err := rdb.Set(ctx, "key", "value", 0).Err()
@@ -25,11 +20,8 @@ func main() {
 	}
 
 	// 获取键值对
-	val, err := rdb.Get(ctx, "key").Result()
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println("key:", val)
+	val1 := rdb.Get(ctx, "key").Val()
+	fmt.Println("key:", val1)
 
 	// 获取不存在的键值对
 	val2, err := rdb.Get(ctx, "key2").Result()
@@ -62,4 +54,22 @@ func main() {
 	if err := rdb.Close(); err != nil {
 		panic(err)
 	}
+}
+
+func createConnect() *redis.Client {
+	ctx := context.Background()
+	rdb := redis.NewClient(&redis.Options{
+		Addr:     "localhost:6379", // Redis 服务器地址
+		Password: "",               // 密码（如果需要）
+		DB:       0,                // 默认数据库
+		PoolSize: 10,
+	})
+
+	s, err := rdb.Ping(ctx).Result()
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("Redis连接成功", s)
+	return rdb
 }
