@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"gorm.io/gorm"
-	orm "study-go/src/gorm"
+	orm "study-go/src/db/gorm"
 )
 
 func main() {
@@ -21,7 +21,7 @@ func main() {
 }
 
 func saveOne(db *gorm.DB) {
-	u := orm.GoUser{
+	u := orm.User{
 		Name:     "GORM",
 		NickName: "gorm",
 	}
@@ -34,7 +34,7 @@ func saveOne(db *gorm.DB) {
 }
 
 func saveMulti(db *gorm.DB) {
-	us := []*orm.GoUser{
+	us := []*orm.User{
 		{Name: "GORM-1", NickName: "gorm-1"},
 		{Name: "GORM-2", NickName: "gorm-2"},
 	}
@@ -44,7 +44,7 @@ func saveMulti(db *gorm.DB) {
 }
 
 func saveBatch(db *gorm.DB) {
-	us := []orm.GoUser{
+	us := []orm.User{
 		{Name: "GORM-1", NickName: "gorm-1"},
 		{Name: "GORM-2", NickName: "gorm-2"},
 		{Name: "GORM-3", NickName: "gorm-3"},
@@ -54,27 +54,27 @@ func saveBatch(db *gorm.DB) {
 }
 
 func saveSelect(db *gorm.DB) {
-	u := orm.GoUser{
+	u := orm.User{
 		Name:     "Select-Name",
 		NickName: "Select-NickName",
 	}
 
 	_ = db.Select("Name").Create(&u)
 
-	var u1 orm.GoUser
-	db.First(&u1, orm.GoUser{Id: u.Id})
+	var u1 orm.User
+	db.First(&u1, orm.User{Id: u.Id})
 	fmt.Println(u1.Id, u1.Name, u1.NickName)
 }
 
 func saveOmit(db *gorm.DB) {
-	u := orm.GoUser{
+	u := orm.User{
 		Name:     "Omit-Name",
 		NickName: "Omit-NickName",
 	}
 
 	_ = db.Omit("Name").Create(&u)
 
-	var u1 orm.GoUser
-	db.First(&u1, orm.GoUser{Id: u.Id})
+	var u1 orm.User
+	db.First(&u1, orm.User{Id: u.Id})
 	fmt.Println(u1.Id, u1.Name, u1.NickName)
 }
