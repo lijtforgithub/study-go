@@ -15,6 +15,7 @@ func main() {
 
 	var h byte
 	var i rune
+	var j string
 
 	fmt.Println(a)
 	fmt.Println(b)
@@ -26,4 +27,5 @@ func main() {
 
 	fmt.Println(h)
 	fmt.Println(i)
+	fmt.Println("string默认值", j)
 }

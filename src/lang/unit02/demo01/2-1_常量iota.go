@@ -5,6 +5,8 @@ import (
 	"unsafe"
 )
 
+// iota代表了const声明块的行索引（下标从0开始）
+// const声明有一个特点：如果常量指定了一个表达式，但后续的常量没有表达式；则继承上面的表达式
 func main() {
 	// 常量
 	const x string = "X"

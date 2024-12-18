@@ -3,9 +3,12 @@ package main
 import "fmt"
 
 /**
- * 管道-数据结构本质队列
+ * 管道-数据结构本质队列 协程间通信
  */
 func main() {
+	//var ch chan int
+	//fmt.Println(<- ch)
+
 	intChan := make(chan int, 3)
 	intChan <- 10
 	intChan <- 20

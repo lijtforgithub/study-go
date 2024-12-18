@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
 	num := 10
@@ -10,10 +13,17 @@ func main() {
 		intChan <- i
 	}
 
-	// 不执行关闭 for range会一直读 报错
-	close(intChan)
-
-	for v := range intChan {
-		fmt.Println(v)
+	read := func() {
+		for v := range intChan {
+			fmt.Println(v)
+		}
 	}
+
+	// 不执行关闭 for range会一直读报错 使用协程不会报错
+	//close(intChan)
+	//read()
+
+	go read()
+	time.Sleep(5 * time.Second)
+
 }

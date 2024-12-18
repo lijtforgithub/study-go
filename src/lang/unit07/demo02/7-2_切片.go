@@ -26,11 +26,12 @@ func main() {
 	// 切片追加 新的数据
 	slice4 := append(slice2, 4, 8)
 	slice4[0] = 10
-	fmt.Println(slice2)
-	fmt.Println(slice4)
+	fmt.Println("slice2", slice2)
+	fmt.Println("slice4", slice4)
 
 	// 切片复制 新的数组
 	var b []int = make([]int, 10)
+	// copy函数不会触发扩容 取两个切片长度最小值
 	copy(b, slice)
 	fmt.Println(b)
 
