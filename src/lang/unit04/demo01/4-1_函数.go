@@ -54,7 +54,7 @@ func swapValue(x, y int) int {
 	return temp
 }
 
-/* 引用传递 */
+/* 引用传递 指针、切片、map类型是引用传递*/
 func swapRef(x *int, y *int) {
 	var temp int
 	temp = *x /* 保存 x 地址上的值 */
